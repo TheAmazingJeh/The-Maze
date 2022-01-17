@@ -1,8 +1,8 @@
 ## The Maze - Main
-from logger import Logger # Import Logger
+from ext.logger import Logger # Import Logger
 log = Logger()            # Initialize Logger
 log.LOGGER_INIT()
-log.log_init("Info","Initilization","Library","os")
+log.log_init("Info","Initialization","Library","os")
 import os # Import os
 
 ## Set Environmental Variables
@@ -10,13 +10,13 @@ os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
 os.environ['SDL_VIDEO_WINDOW_POS'] = "128,128"
 
 ## Import Libraries
-log.log_init("Info","Initilization","Library","Pygame")
+log.log_init("Info","Initialization","Library","Pygame")
 import pygame as PYG
 
 ## Import Custom Libraries
-from display import Display
-from movement_logic import Movement
-from effects import Effect
+from ext.display import Display
+from ext.movement_logic import Movement
+from ext.effects import Effect
 
 ## Game Window Data
 
