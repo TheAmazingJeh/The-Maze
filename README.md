@@ -20,15 +20,15 @@
 
 [![Issues][issues-shield]][https://github.com/TheAmazingJeh/The-Maze/issues]
 
-
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
 
 
 <!-- PROJECT LOGO -->
 <br />
-<div align="center">
-  <a href="https://github.com/TheAmazingJeh/The-Maze">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
 
 <h3 align="center">The Maze</h3>
 
@@ -78,8 +78,6 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `TheAmazingJeh`, `The-Maze`, `twitter_handle`, `linkedin_username`, `email`, `email_client`, `project_title`, `project_description`
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -146,9 +144,7 @@ Project Link: [https://github.com/TheAmazingJeh/The-Maze](https://github.com/The
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* []()
-* []()
-* []()
+* [othneildrew - Readme template](https://github.com/othneildrew/Best-README-Template)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
