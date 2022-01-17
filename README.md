@@ -19,7 +19,6 @@
 -->
 
 [![Issues][issues-shield]][https://github.com/TheAmazingJeh/The-Maze/issues]
-
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
