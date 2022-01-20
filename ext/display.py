@@ -33,10 +33,10 @@ class Display():
 
                 else:
                     display_surface.blit(self.return_image("missingImg",images),(pos_X,pos_Y))
-                pos_X += 32
+                pos_X += 32 # Move 32 px right
 
-            pos_X = 32
-            pos_Y += 32
+            pos_X = 32      # Move 32 px right
+            pos_Y += 32     # Move 32 px down
 
         return display_surface
         
