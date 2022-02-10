@@ -27,7 +27,7 @@
 
 <!-- PROJECT LOGO -->
 <br />
-
+Currently Under Development
 <h3 align="center">The Maze</h3>
 
   <p align="center">
