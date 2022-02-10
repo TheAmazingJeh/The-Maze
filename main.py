@@ -1,8 +1,8 @@
 ## The Maze - Main
 from ext.logger import Logger # Import Logger
-log = Logger(__file__)            # Initialize Logger
+log = Logger()            # Initialize Logger
 log.LOGGER_INIT()
-log.log_init("Info","Initialization","Library","os")
+
 import os # Import os
 
 ## Set Environmental Variables
@@ -10,7 +10,7 @@ os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
 os.environ['SDL_VIDEO_WINDOW_POS'] = "128,128"
 
 ## Import Libraries
-log.log_init("Info","Initialization","Library","Pygame")
+
 import pygame as PYG
 
 ## Import Custom Libraries

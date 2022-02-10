@@ -2,9 +2,7 @@ import pygame as PYG
 from ext.logger import Logger
 
 class Movement():
-    def __init__(self):
-        log = Logger()
-        log.log_init("Info","Initialization","Class","Logic")
+    def __init__(self):    
         self.valid_keys = {
             "movement":{
                 "up":PYG.K_w,

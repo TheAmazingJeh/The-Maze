@@ -1,12 +1,10 @@
 import pygame as PYG
 import os
 import time
-from ext.logger import Logger
 
 class Display():
     def __init__(self):
-        log = Logger()
-        log.log_init("Info","Initialization","Class","Display")
+        pass
 
     def construct_display(self,display_surface,level_data,images):
         """

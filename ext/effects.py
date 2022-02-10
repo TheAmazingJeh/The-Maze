@@ -1,14 +1,12 @@
 import os
 
 from time import sleep
-from logger import Logger
 
 os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
 
 class Effect():
     def __init__(self):
-        log = Logger()
-        log.log_init("Info","Initialization","Class","Effects")
+        pass
     
     def fade_to_black(self,display_surface):
         black_surface = PYG.Surface((display_surface.get_width(), display_surface.get_height()), flags= PYG.SRCALPHA)
@@ -71,4 +69,4 @@ def main():
         pygame.display.update()
         clock.tick(5)
 
-main()
+#main()
