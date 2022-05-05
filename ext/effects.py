@@ -1,5 +1,5 @@
 import os
-
+import pygame as PYG
 from time import sleep
 
 os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
@@ -69,4 +69,13 @@ def main():
         pygame.display.update()
         clock.tick(5)
 
-#main()
+if __name__ == "__main__":
+    os.system("color 0c")
+    input("""
+    ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+    ┃ This is not the correct file to run. ┃
+    ┃                                      ┃
+    ┃         Please run main.py           ┃
+    ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+      
+      Press enter to close...""")

@@ -15,9 +15,11 @@ class Logger():
             log_id,log_type,type,name = "Log ID","Log Type","Data Type","Name"
             print(f"  LOG - {t:<19} │ {log_id:<10} │ {log_type:<15}│ {type:<10} │ {name:<20} │\n")
 
-    def debug_print(self):
+    def debug_print(self,vars):
         if self.enabled:
-            print("""
-            
-            
+            os.system("cls")
+            print(f"""
+            Test
+            Direction = {vars[0]}
+            Windowsixe = {vars[1]}
             """)

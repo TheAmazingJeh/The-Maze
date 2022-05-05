@@ -3,6 +3,10 @@ from ext.logger import Logger # Import Logger
 log = Logger()            # Initialize Logger
 log.LOGGER_INIT()
 
+log.enable()
+
+
+
 import os # Import os
 
 ## Set Environmental Variables
@@ -28,6 +32,7 @@ def main():
 ############################################################# Create Variables / Objects for game setup
     #input()
     mainLoop = True          # Variable for main game loop
+    gameLoop = False
     clock = PYG.time.Clock() # Create Clock (FPS)
     NAME = "The MAZE"
     ICON = display.get_tile("brick")
@@ -49,24 +54,14 @@ def main():
         "YELLOW":(255,255,  0),
     }
 
-    # TEMP ##################################### Creating dummy level data
-    level_data = {
-            "l1":[1,1,1,1,1,1,1,1,1,1,1,1],
-            "l2":[1,3,0,0,2,1,2,2,0,1,1,1],
-            "l3":[1,1,1,0,0,2,2,0,0,0,1,1],
-            "l4":[1,1,1,1,1,1,1,1,1,1,1,1],
-        }
 
-    level_data2 = {
-            "l1":[1,1,1,1,1,1,1,1,1,1,1,1],
-            "l2":[1,3,0,0,2,1,2,2,0,1,1,1],
-            "l3":[1,1,1,0,0,2,2,0,0,0,1,0],
-            "l4":[1,1,1,1,1,1,1,1,1,1,1,1],
-        }
-    # TEMP #####################################
 
-    levelXY = display.rescale_display(level_data)   # Get level x and y data, 
-    display_surface = PYG.display.set_mode(levelXY) # Resize Display to fit Level (using the level_data var)
+    
+
+
+
+
+    
     
     images = {
         "floor":        display.get_tile("floor"),
@@ -74,38 +69,52 @@ def main():
         "brickCracked": display.get_tile("brickCracked"),
         "missingImg":   display.get_tile("missingImg"),
     }
-    display.rescale_display(level_data)
-    while mainLoop:        
-        clock.tick(FPS)
-############################################################# Handle Pygame events
+    
 
-        level_state = move.move_player(level_data,direction)
 
-        if level_state["Ignore Event"] != True:
-            for event in PYG.event.get() :
-                #print(direction)
-                if event.type == PYG.QUIT :           ## Pygame Quit event. (X button)
-                    if ALLOW_CLOSE == True:           # Test variable
-                        log.log_init("Event Log","PYG.QUIT","PYG Event","Pygame")
-                        log.log_init("Info","Closing","Library","Pygame")
-                        PYG.quit()                    # Close Pygame 
-                        log.log_init("Info","Closing","","Python")
-                        quit()                        # Close Python
-                if event.type == PYG.MOUSEBUTTONDOWN: ## Pygame Mouse Click event.
-                    log.log_init("Event Log","PYG.MOUSEBUTTONDOWN","PYG Event","Pygame")
-                if event.type == PYG.KEYDOWN:         ## ONLY USE FOR SINGLE PRESSED, NOT HOLDING DOWN USE PYG.key.get_pressed()
-                    single_press = event.key
-                else:
-                    single_press = None                    
-                    #effect.fade_to_black(display_surface)                              # Click Detection
+    while mainLoop:
+        gameLoop = True # WILL BE REPLACED WITH PROPER LOADING
+
+
+        # TEMP ##################################### Creating dummy level data, will be replaced with proper loading
+        level_data = {
+            "texture_data":{
+                "l1":[1,1,1,1,1,1,1,1,1,1,1,1],
+                "l2":[1,3,0,0,2,1,2,2,0,1,1,1],
+                "l3":[1,1,1,0,0,2,2,0,0,0,1,1],
+                "l4":[1,1,1,1,1,1,1,1,1,1,1,1],
+                }
+        }
+        level_data2 = {
+                "l1":[1,1,1,1,1,1,1,1,1,1,1,1],
+                "l2":[1,2,0,0,2,1,2,2,0,1,1,1],
+                "l3":[1,1,1,0,0,2,2,0,0,0,1,0],
+                "l4":[1,1,1,1,1,1,1,1,1,1,1,1],}
+        size = display.rescale_display(level_data)
+        PYG.display.set_mode(size) 
+               
+        # /TEMP #####################################
+        while gameLoop:        
+            clock.tick(FPS)
+    ############################################################# Handle Pygame events
             
-            direction = move.collect_movement(keys_pressed)
+            level_state = move.move_player(level_data,direction)
+            if level_state["Ignore Event"] != True:
+                for event in PYG.event.get() :
+                    #print(direction)
+                    if event.type == PYG.QUIT :           ## Pygame Quit event. (X button)
+                        if ALLOW_CLOSE == True:           # Test variable
+                            PYG.quit()                    # Close Pygame 
+                            quit()                        # Close Python
+                    if event.type == PYG.MOUSEBUTTONDOWN: ## Pygame Mouse Click event.
+                        pass                              # Click Detection
+                
+                direction = move.collect_movement(keys_pressed)
 
-            log.debug_print()
-            
-            keys_pressed = PYG.key.get_pressed()
-        display_surface = display.construct_display(display_surface,level_data,images)
-        PYG.display.update()
+                log.debug_print([direction,size])         
+                keys_pressed = PYG.key.get_pressed()
+            display_surface = display.construct_display(display_surface,level_data,images)
+            PYG.display.update()
 
 # PYG.display.set_icon() - needs pygame.surface
 

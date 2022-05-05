@@ -1,5 +1,5 @@
 import pygame as PYG
-from ext.logger import Logger
+import os
 
 class Movement():
     def __init__(self):    
@@ -27,17 +27,29 @@ class Movement():
 
     def move_player(self,level_data,direction):
         
-        player_locationXY = (0,0)
-        player_location   = []
-        detail_location   = []    # Buttons ext.
+        new_player_locationXY = (0,0)
+        new_player_location   = []
+        detail_location   = []    # Buttons, switches ext.
 
         if direction is not None:
             # Do direction things
             pass
         return {
             "Ignore Event": False,
-            "level_data": level_data,
-            "player_location": player_location,
-            "PlayerXY": player_locationXY,
-            "details": detail_location
+            "texture_data": level_data["texture_data"],
+            "player_location": new_player_location,
+            "PlayerXY": new_player_locationXY,
+            "detail_location": detail_location
         }
+
+
+if __name__ == "__main__":
+    os.system("color 0c")
+    input("""
+    ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+    ┃ This is not the correct file to run. ┃
+    ┃                                      ┃
+    ┃         Please run main.py           ┃
+    ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+      
+      Press enter to close...""")
